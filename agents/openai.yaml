@@ -1,0 +1,4 @@
+interface:
+  display_name: "墨布自排"
+  short_description: "不改原文，按内容精细识别语法与排版节奏"
+  default_prompt: "使用 $inkment-auto-layout 识别这组文档和图片，让我选择自动确认或手动确认，再按 YYYYMMDD｜主题生成规范归档项目。"
