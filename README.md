@@ -1,10 +1,24 @@
 # 墨布自排 · Inkment Auto Layout
 
-根据文章内容识别排版结构，将 Markdown、Word 正文与配套图片整理为可导入墨布编辑器的 Markdown 项目。
+**墨布自排是服务于 [墨布编辑器（Inkment）](https://inkment.galegram.com/) 的配套 Codex Skill。** 根据文章内容识别排版结构，将 Markdown、Word 正文与配套图片整理为可直接导入墨布的 Markdown 项目。
+
+[访问墨布官网](https://inkment.galegram.com/) · [打开墨布编辑器](https://inkment.galegram.com/editor)
+
+[![墨布编辑器界面示例：左侧模板、中间 Markdown 编辑区、右侧公众号预览](docs/images/inkment-editor.png)](https://inkment.galegram.com/editor)
+
+*墨布编辑器界面示例。点击样图可打开编辑器。*
 
 **原则：不改变原文，只调整排版语法。** 保留文字、标点、数值和正文顺序，不润色、不续写、不摘要；图片采用规范命名和相对路径，原始素材保留归档。
 
 这是在 Codex 中使用的 Skill。文章识别与排版由 Codex 按照 Skill 指令完成，仓库中的 Python 脚本负责检查输出结构与引用。
+
+## 与墨布编辑器配合使用
+
+墨布自排负责准备文章：识别墨布语法、整理 Word／Markdown、匹配图片并输出规范项目。墨布编辑器负责呈现与发布准备：导入项目、选择视觉模板、实时预览和复制公众号排版内容。
+
+使用路径：**提供原文与配图 → Codex 自排 → 生成 Markdown 项目 → 导入墨布编辑器 → 预览并复制。**
+
+本 Skill 的语法与输出目录围绕墨布编辑器设计，生成结果需要在墨布中检查实际呈现；Skill 本身不包含编辑器。
 
 ## 功能
 
@@ -132,7 +146,7 @@ YYYYMMDD｜主题/
 
 ### 4. 导入墨布并预览
 
-将最终 Markdown 与 `图片/` 目录一起导入墨布，保留相对目录关系，再使用所需视觉模板预览。Skill 默认生成语义化 Markdown，不自动更换编辑器模板。
+打开 [墨布编辑器](https://inkment.galegram.com/editor)，将最终 Markdown 与 `图片/` 目录一起导入，保留相对目录关系，再使用所需视觉模板预览。确认标题、重点、引用、表格与图片呈现后，使用编辑器的复制功能继续公众号排版。Skill 默认生成语义化 Markdown，不自动更换编辑器模板。
 
 ## 墨布语法示例
 
@@ -185,3 +199,4 @@ python3 scripts/verify_inkment_bundle.py '/绝对路径/主题-墨布排版.md'
 - [agents/openai.yaml](agents/openai.yaml)：Skill 显示名称与默认调用提示。
 - [references/](references/)：语法、内容感知排版及输入处理规则。
 - [scripts/verify_inkment_bundle.py](scripts/verify_inkment_bundle.py)：Markdown 与归档项目验收脚本。
+- [docs/images/inkment-editor.png](docs/images/inkment-editor.png)：墨布编辑器界面样图，来自墨布官网项目中的实际界面截图。
